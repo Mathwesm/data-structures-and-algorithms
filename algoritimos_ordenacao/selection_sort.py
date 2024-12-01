@@ -26,18 +26,18 @@ def measure_time(func, arr, iterations=10):
     avg_time = (end - start) / iterations
     return avg_time
 
-# Testando com lista pequena
+
 arr_small = [64, 25, 12, 22, 11]
 print("Lista original (pequena):", arr_small)
 sorted_arr_small = selection_sort(arr_small)
 print("\nLista ordenada (pequena):", sorted_arr_small)
 
-# Testando com lista média
+
 arr_medium = random.sample(range(1, 1001), 100)  # Lista média de tamanho 100
 time_taken_medium = measure_time(selection_sort, arr_medium, iterations=1)
 print(f"\nTempo de execução para lista média: {time_taken_medium:.6f} segundos")
 
-# Testando com lista grande
+
 arr_large = random.sample(range(1, 10001), 1000)  # Lista grande de tamanho 1000
 time_taken_large = measure_time(selection_sort, arr_large, iterations=1)
 print(f"\nTempo de execução para lista grande: {time_taken_large:.6f} segundos")
