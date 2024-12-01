@@ -14,7 +14,7 @@ def medir_tempo(funcao, lista, valor, iteracoes=1000):
     tempo_medio = (fim - inicio) / iteracoes
     return resultado, tempo_medio
 
-# Criando as listas de teste
+
 lista_uniforme = list(range(1, 10_001, 2))
 lista_nao_uniforme = sorted(random.sample(range(1, 50_001), 10_000))
 
@@ -47,10 +47,10 @@ for i in tamanhos:
     _, tempo_interpolacao = medir_tempo(busca_por_interpolacao, lista_nao_uniforme_parcial, valor2)
     tempos_interpolacao_nao_uniforme.append(tempo_interpolacao)
 
-# Plotando os gráficos
+
 plt.figure(figsize=(12, 6))
 
-# Gráfico para lista uniforme
+
 plt.subplot(1, 2, 1)
 plt.plot(tamanhos, tempos_binaria_uniforme, label="Busca Binária", color='blue', marker='o')
 plt.plot(tamanhos, tempos_interpolacao_uniforme, label="Busca por Interpolação", color='red', marker='o')
@@ -59,7 +59,7 @@ plt.xlabel("Tamanho da Lista")
 plt.ylabel("Tempo (segundos)")
 plt.legend()
 
-# Gráfico para lista não uniforme
+
 plt.subplot(1, 2, 2)
 plt.plot(tamanhos, tempos_binaria_nao_uniforme, label="Busca Binária", color='blue', marker='o')
 plt.plot(tamanhos, tempos_interpolacao_nao_uniforme, label="Busca por Interpolação", color='red', marker='o')
