@@ -23,6 +23,7 @@ def medir_tempo(funcao, lista, valor, iteracoes=1000):
     inicio = time.perf_counter()
     for _ in range(iteracoes):
         resultado = funcao(lista, valor)
+        assert resultado is not None, f"Erro: {valor} não encontrado!"
     fim = time.perf_counter()
     tempo_medio = (fim - inicio) / iteracoes
     return resultado, tempo_medio
