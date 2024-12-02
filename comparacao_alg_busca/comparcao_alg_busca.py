@@ -4,6 +4,7 @@ from algoritimos_busca.busca_interpolacao import busca_por_interpolacao
 from algoritimos_busca.busca_binaria import busca_binaria
 from algoritimos_busca.busca_jump import busca_jump
 from algoritimos_busca.busca_expotencial import busca_exponencial
+from algoritimos_busca.busca_ternaria import busca_ternaria
 from tempo.time import medir_tempo
 
 
@@ -15,8 +16,8 @@ valor1 = 7777
 valor2 = 50_000
 
 
-algoritmos = [busca_binaria, busca_por_interpolacao, busca_jump, busca_exponencial]
-nomes_algoritmos = ["Busca Binária", "Busca por Interpolação", "Busca Jump", "Busca Exponencial"]
+algoritmos = [busca_binaria, busca_por_interpolacao, busca_jump, busca_exponencial, busca_ternaria]
+nomes_algoritmos = ["Busca Binária", "Busca por Interpolação", "Busca Jump", "Busca Exponencial","Busca Ternaria"]
 
 tempos_uniformes = {nome: [] for nome in nomes_algoritmos}
 tempos_nao_uniformes = {nome: [] for nome in nomes_algoritmos}
@@ -42,7 +43,7 @@ plt.figure(figsize=(14, 6))
 
 
 plt.subplot(1, 2, 1)
-for nome, cor in zip(nomes_algoritmos, ['blue', 'red', 'green', 'purple']):
+for nome, cor in zip(nomes_algoritmos, ['blue', 'red', 'green', 'purple', 'black']):
     plt.plot(tamanhos, tempos_uniformes[nome], label=nome, color=cor, marker='o')
 plt.title("Comparação de Tempos - Lista Uniforme")
 plt.xlabel("Tamanho da Lista")
@@ -51,7 +52,7 @@ plt.legend()
 
 
 plt.subplot(1, 2, 2)
-for nome, cor in zip(nomes_algoritmos, ['blue', 'red', 'green', 'purple']):
+for nome, cor in zip(nomes_algoritmos, ['blue', 'red', 'green', 'purple', 'black']):
     plt.plot(tamanhos, tempos_nao_uniformes[nome], label=nome, color=cor, marker='o')
 plt.title("Comparação de Tempos - Lista Não Uniforme")
 plt.xlabel("Tamanho da Lista")
