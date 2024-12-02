@@ -1,5 +1,5 @@
-import time
 import random
+from tempo.time import medir_tempo
 
 def busca_por_interpolacao(lista, x):
     baixo = 0
@@ -16,15 +16,6 @@ def busca_por_interpolacao(lista, x):
             alto = pos - 1
 
     return -1
-
-def medir_tempo(funcao, lista, valor, iteracoes=1000):
-    inicio = time.perf_counter()
-    for _ in range(iteracoes):
-        resultado = funcao(lista, valor)
-        assert resultado is not None, f"Erro: {valor} não encontrado!"
-    fim = time.perf_counter()
-    tempo_medio = (fim - inicio) / iteracoes
-    return resultado, tempo_medio
 
 
 lista_uniforme = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]

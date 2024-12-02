@@ -1,6 +1,6 @@
-import time
 import math
 import random
+from tempo.time import medir_tempo
 
 def busca_jump(lista, x):
     n = len(lista)
@@ -18,13 +18,6 @@ def busca_jump(lista, x):
             return i
     return -1
 
-def medir_tempo(funcao, lista, valor, iteracoes=1000):
-    inicio = time.perf_counter()
-    for _ in range(iteracoes):
-        resultado = funcao(lista, valor)
-    fim = time.perf_counter()
-    tempo_medio = (fim - inicio) / iteracoes
-    return resultado, tempo_medio
 
 lista_uniforme = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 x1 = 70

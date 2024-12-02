@@ -1,4 +1,3 @@
-
 import random
 from tempo.time import medir_tempo
 

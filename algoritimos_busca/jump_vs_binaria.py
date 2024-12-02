@@ -1,17 +1,10 @@
-from busca_binaria import busca_binaria
-from busca_jump import busca_jump
 import time
 import random
 import matplotlib.pyplot as plt
+from busca_binaria import busca_binaria
+from busca_jump import busca_jump
+from tempo.time import medir_tempo
 
-def medir_tempo(funcao, lista, valor, iteracoes=1000):
-    inicio = time.perf_counter()
-    for _ in range(iteracoes):
-        resultado = funcao(lista, valor)
-        assert resultado is not None, f"Erro: {valor} não encontrado!"
-    fim = time.perf_counter()
-    tempo_medio = (fim - inicio) / iteracoes
-    return resultado, tempo_medio
 
 def gerar_lista_ordenada(n):
     return sorted(random.sample(range(n * 10), n))

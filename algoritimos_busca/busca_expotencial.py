@@ -1,4 +1,5 @@
 import time
+from tempo.time import medir_tempo
 
 def busca_binaria(lista, baixo, alto, valor):
     while baixo <= alto:
@@ -19,14 +20,6 @@ def busca_exponencial(lista, valor):
         i *= 2
     return busca_binaria(lista, i // 2, min(i, len(lista) - 1), valor)
 
-def medir_tempo(funcao, lista, valor, iteracoes=1000):
-    inicio = time.perf_counter()
-    for _ in range(iteracoes):
-        resultado = funcao(lista, valor)
-        assert resultado is not None, f"Erro: {valor} não encontrado!"
-    fim = time.perf_counter()
-    tempo_medio = (fim - inicio) / iteracoes
-    return resultado, tempo_medio
 
 lista_pequeno = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
 y = 15
