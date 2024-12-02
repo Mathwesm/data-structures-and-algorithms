@@ -66,3 +66,6 @@
 **Descrição**: O **Ternary Search** é uma variação do Binary Search, onde a lista é dividida em três partes ao invés de duas. O algoritmo compara o elemento com os dois pontos de divisão e decide em qual terço a busca continuará. Ele tem complexidade O(log₃ n), que é ligeiramente melhor que o Binary Search em algumas situações.
 
 **Exemplo**: Em uma lista ordenada, ao invés de comparar com o elemento do meio, o Ternary Search divide a lista em três partes e faz duas comparações em cada iteração.
+
+## 12. Comparação dos algoritimos de busca
+![algoritimos de busca](assets/comparcao_alg_busca.png)
