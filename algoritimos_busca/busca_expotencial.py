@@ -1,4 +1,3 @@
-import time
 from tempo.time import medir_tempo
 
 def busca_binaria(lista, baixo, alto, valor):
