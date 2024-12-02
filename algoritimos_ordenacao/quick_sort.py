@@ -7,7 +7,6 @@ sys.setrecursionlimit(2000)
 def quick_sort(lista, escolha_pivo='primeiro'):
     if len(lista) <= 1:
         return lista
-
     if escolha_pivo == 'primeiro':
         pivo = lista[0]
     elif escolha_pivo == 'ultimo':
@@ -38,6 +37,5 @@ def comparar_quick_sort():
     for escolha_pivo in ['primeiro', 'ultimo', 'meio', 'aleatorio']:
         _, tempo_gasto = medir_tempo(quick_sort, lista_aleatoria, escolha_pivo)
         print(f"  Pivô {escolha_pivo}: {tempo_gasto:.6f} segundos")
-
 
 comparar_quick_sort()
