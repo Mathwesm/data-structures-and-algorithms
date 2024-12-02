@@ -1,5 +1,5 @@
 import time
-from busca_binaria import busca_binaria
+from algoritimos_busca.busca_binaria import busca_binaria
 from quick_sort import quick_sort
 
 def main():
