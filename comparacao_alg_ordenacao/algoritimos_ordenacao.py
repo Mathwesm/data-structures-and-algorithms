@@ -1,7 +1,5 @@
-
-
-def ordenacao_shell_comparacoes(arr):
-    comparacoes = 0
+def shell_sort_comparisons(arr):
+    comparisons = 0
     n = len(arr)
     gap = n // 2
     while gap > 0:
@@ -9,32 +7,32 @@ def ordenacao_shell_comparacoes(arr):
             temp = arr[i]
             j = i
             while j >= gap and arr[j - gap] > temp:
-                comparacoes += 1
+                comparisons += 1
                 arr[j] = arr[j - gap]
                 j -= gap
             arr[j] = temp
         gap //= 2
-    return arr, comparacoes
+    return arr, comparisons
 
 
-def ordenacao_merge_comparacoes(arr):
+def merge_sort_comparisons(arr):
     def merge(arr, temp_arr, left, right):
-        comparacoes = 0
+        comparisons = 0
         if left == right:
-            return comparacoes
+            return comparisons
         mid = (left + right) // 2
-        comparacoes += merge(arr, temp_arr, left, mid)
-        comparacoes += merge(arr, temp_arr, mid + 1, right)
-        comparacoes += merge_sorted(arr, temp_arr, left, mid, right)
-        return comparacoes
+        comparisons += merge(arr, temp_arr, left, mid)
+        comparisons += merge(arr, temp_arr, mid + 1, right)
+        comparisons += merge_sorted(arr, temp_arr, left, mid, right)
+        return comparisons
 
     def merge_sorted(arr, temp_arr, left, mid, right):
-        comparacoes = 0
+        comparisons = 0
         i = left
         j = mid + 1
         k = left
         while i <= mid and j <= right:
-            comparacoes += 1
+            comparisons += 1
             if arr[i] <= arr[j]:
                 temp_arr[k] = arr[i]
                 i += 1
@@ -52,83 +50,83 @@ def ordenacao_merge_comparacoes(arr):
             k += 1
         for i in range(left, right + 1):
             arr[i] = temp_arr[i]
-        return comparacoes
+        return comparisons
 
     temp_arr = [0] * len(arr)
-    comparacoes = merge(arr, temp_arr, 0, len(arr) - 1)
-    return arr, comparacoes
+    comparisons = merge(arr, temp_arr, 0, len(arr) - 1)
+    return arr, comparisons
 
 
-def ordenacao_selecao_comparacoes(arr):
-    comparacoes = 0
+def selection_sort_comparisons(arr):
+    comparisons = 0
     n = len(arr)
     for i in range(n):
         min_index = i
         for j in range(i + 1, n):
-            comparacoes += 1
+            comparisons += 1
             if arr[j] < arr[min_index]:
                 min_index = j
         arr[i], arr[min_index] = arr[min_index], arr[i]
-    return arr, comparacoes
+    return arr, comparisons
 
 
-def ordenacao_quick_comparacoes(arr):
-    comparacoes = 0
+def quick_sort_comparisons(arr):
+    comparisons = 0
 
     def quick_sort(arr, low, high):
-        nonlocal comparacoes
+        nonlocal comparisons
         if low < high:
             pi, comps = partition(arr, low, high)
-            comparacoes += comps
+            comparisons += comps
             quick_sort(arr, low, pi - 1)
             quick_sort(arr, pi + 1, high)
 
     def partition(arr, low, high):
-        comparacoes = 0
+        comparisons = 0
         pivot = arr[high]
         i = low - 1
         for j in range(low, high):
-            comparacoes += 1
+            comparisons += 1
             if arr[j] < pivot:
                 i += 1
                 arr[i], arr[j] = arr[j], arr[i]
         arr[i + 1], arr[high] = arr[high], arr[i + 1]
-        return i + 1, comparacoes
+        return i + 1, comparisons
 
     quick_sort(arr, 0, len(arr) - 1)
-    return arr, comparacoes
+    return arr, comparisons
 
 
-def ordenacao_bucket_comparacoes(arr):
-    comparacoes = 0
+def bucket_sort_comparisons(arr):
+    comparisons = 0
     if len(arr) == 0:
-        return arr, comparacoes
+        return arr, comparisons
     min_val, max_val = min(arr), max(arr)
     bucket_range = (max_val - min_val) / len(arr) or 1
     buckets = [[] for _ in range(len(arr))]
     for num in arr:
         index = min(int((num - min_val) // bucket_range), len(arr) - 1)
         buckets[index].append(num)
-        comparacoes += 1
+        comparisons += 1
     sorted_arr = []
     for bucket in buckets:
         sorted_bucket = sorted(bucket)
         sorted_arr.extend(sorted_bucket)
-    return sorted_arr, comparacoes
+    return sorted_arr, comparisons
 
 
-def ordenacao_radix_comparacoes(arr):
-    comparacoes = 0
+def radix_sort_comparisons(arr):
+    comparisons = 0
 
     def counting_sort(arr, exp1):
-        nonlocal comparacoes
+        nonlocal comparisons
         n = len(arr)
         output = [0] * n
         count = [0] * 10
         for i in range(n):
             index = arr[i] // exp1
             count[index % 10] += 1
-            comparacoes += 1
+            comparisons += 1
         for i in range(1, 10):
             count[i] += count[i - 1]
         i = n - 1
@@ -141,7 +139,7 @@ def ordenacao_radix_comparacoes(arr):
             arr[i] = output[i]
 
     def radix_sort(arr):
-        nonlocal comparacoes
+        nonlocal comparisons
         max1 = max(arr)
         exp = 1
         while max1 // exp > 0:
@@ -149,4 +147,4 @@ def ordenacao_radix_comparacoes(arr):
             exp *= 10
 
     radix_sort(arr)
-    return arr, comparacoes
+    return arr, comparisons

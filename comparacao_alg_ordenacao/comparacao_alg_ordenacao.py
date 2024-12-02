@@ -6,12 +6,12 @@ from  tempo.time import medir_tempo_comparacoes
 
 
 algoritmos = [
-    ordenacao_selecao_comparacoes,
-    ordenacao_shell_comparacoes,
-    ordenacao_merge_comparacoes,
-    ordenacao_quick_comparacoes,
-    ordenacao_bucket_comparacoes,
-    ordenacao_radix_comparacoes
+    shell_sort_comparisons,
+    shell_sort_comparisons,
+    merge_sort_comparisons,
+    quick_sort_comparisons,
+    bucket_sort_comparisons,
+    radix_sort_comparisons
 ]
 
 nomes_algoritmos = [

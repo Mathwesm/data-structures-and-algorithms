@@ -1,10 +1,10 @@
-def ordenar_por_mercado_strings(lista):
+def merge_sort_strings(lista):
     if len(lista) <= 1:
         return lista
 
     meio = len(lista) // 2
-    metade_esquerda = ordenar_por_mercado_strings(lista[:meio])
-    metade_direita = ordenar_por_mercado_strings(lista[meio:])
+    metade_esquerda = merge_sort_strings(lista[:meio])
+    metade_direita = merge_sort_strings(lista[meio:])
 
     return mesclar_strings(metade_esquerda, metade_direita)
 
@@ -29,5 +29,5 @@ def mesclar_strings(esquerda, direita):
 
 arr_strings = ["banana", "maça", "bolo", "cachorro"]
 print("Lista original (strings):", arr_strings)
-arr_strings_ordenada = ordenar_por_mercado_strings(arr_strings)
+arr_strings_ordenada = merge_sort_strings(arr_strings)
 print("Lista ordenada (strings):", arr_strings_ordenada)

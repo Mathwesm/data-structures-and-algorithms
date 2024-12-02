@@ -1,7 +1,7 @@
 import random
 from tempo.time import medir_tempo
 
-def ordenacao_shell(lista, tipo_seq="shell"):
+def shell_sort(lista, tipo_seq="shell"):
     n = len(lista)
     if tipo_seq == "shell":
         gaps = [n // 2, 1]
@@ -37,15 +37,15 @@ def comparar_algoritmos_shell_sort():
         print(f"\nComparando Shell Sort para lista de tamanho {n}:")
 
 
-        _, tempo_shell = medir_tempo(ordenacao_shell, lista_original.copy(), "shell", iteracoes=1)
+        _, tempo_shell = medir_tempo(shell_sort, lista_original.copy(), "shell", iteracoes=1)
         print(f"Tempo para Shell Sort (sequência Shell): {tempo_shell:.6f} segundos")
 
 
-        _, tempo_knuth = medir_tempo(ordenacao_shell, lista_original.copy(), "knuth", iteracoes=1)
+        _, tempo_knuth = medir_tempo(shell_sort, lista_original.copy(), "knuth", iteracoes=1)
         print(f"Tempo para Shell Sort (sequência Knuth): {tempo_knuth:.6f} segundos")
 
 
-        _, tempo_hibbard = medir_tempo(ordenacao_shell, lista_original.copy(), "hibbard", iteracoes=1)
+        _, tempo_hibbard = medir_tempo(shell_sort, lista_original.copy(), "hibbard", iteracoes=1)
         print(f"Tempo para Shell Sort (sequência Hibbard): {tempo_hibbard:.6f} segundos")
 
 

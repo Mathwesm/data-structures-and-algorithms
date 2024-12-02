@@ -1,4 +1,4 @@
-def ordenacao_insercao(lista):
+def bucket_sort(lista):
     for i in range(1, len(lista)):
         chave = lista[i]
         j = i - 1
@@ -8,7 +8,7 @@ def ordenacao_insercao(lista):
         lista[j + 1] = chave
 
 
-def ordenacao_baldes_float(lista):
+def bucket_sort_float(lista):
     n = len(lista)
     if n <= 1:
         return lista
@@ -20,7 +20,7 @@ def ordenacao_baldes_float(lista):
         baldes[indice].append(i)
 
     for i in range(n):
-        ordenacao_insercao(baldes[i])
+        bucket_sort_float(baldes[i])
 
     resultado = []
     for balde in baldes:

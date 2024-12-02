@@ -21,7 +21,7 @@ def contagem_ordenada(lista, exp, base=10):
         lista[i] = resultado[i]
 
 
-def ordenacao_por_radix(lista, base=10):
+def radix_sort(lista, base=10):
     max_num = max(lista)
 
     exp = 1
@@ -37,13 +37,13 @@ arr_5_digitos = [54213, 12345, 98765, 87654, 23456]
 arr_10_digitos = [1234567890, 9876543210, 4567891230, 2345678901, 6789012345]
 
 print("Lista original (2 dígitos):", arr_2_digitos)
-arr_ordenada_2 = ordenacao_por_radix(arr_2_digitos, base=10)
+arr_ordenada_2 = radix_sort(arr_2_digitos, base=10)
 print("Lista ordenada (2 dígitos):", arr_ordenada_2)
 
 print("\nLista original (5 dígitos):", arr_5_digitos)
-arr_ordenada_5 = ordenacao_por_radix(arr_5_digitos, base=10)
+arr_ordenada_5 = radix_sort(arr_5_digitos, base=10)
 print("Lista ordenada (5 dígitos):", arr_ordenada_5)
 
 print("\nLista original (10 dígitos):", arr_10_digitos)
-arr_ordenada_10 = ordenacao_por_radix(arr_10_digitos, base=10)
+arr_ordenada_10 = radix_sort(arr_10_digitos, base=10)
 print("Lista ordenada (10 dígitos):", arr_ordenada_10)
