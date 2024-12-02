@@ -20,16 +20,18 @@ def bucket_sort_float(lista):
         baldes[indice].append(i)
 
     for i in range(n):
-        bucket_sort_float(baldes[i])
+        if len(baldes[i]) > 1:
+            bucket_sort(baldes[i])
 
     resultado = []
     for balde in baldes:
-        resultado.extend(balde)
+        if balde:
+            resultado.extend(balde)
 
     return resultado
 
 
 arr_float = [0.42, 0.32, 0.17, 0.83, 0.91, 0.19, 0.65]
 print("Lista original (flutuante):", arr_float)
-arr_float_ordenada = ordenacao_baldes_float(arr_float)
+arr_float_ordenada = bucket_sort_float(arr_float)
 print("Lista ordenada (flutuante):", arr_float_ordenada)
