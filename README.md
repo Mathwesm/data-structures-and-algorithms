@@ -1,35 +1,35 @@
 # Algoritmos de Busca e Ordenação
 
-## 1. Binary Search
-**Descrição**: O **Binary Search** é um algoritmo de busca eficiente utilizado em listas ordenadas. O algoritmo divide a lista ao meio a cada iteração, comparando o valor central com o elemento alvo. Dependendo do resultado, a busca continua na metade superior ou inferior da lista. O algoritmo tem complexidade O(log n).
+## 1. Busca Binária (Binary Search)
+**Descrição**: A **Busca Binária** é um algoritmo de busca eficiente utilizado em listas ordenadas. O algoritmo divide a lista ao meio a cada iteração, comparando o valor central com o elemento alvo. Dependendo do resultado, a busca continua na metade superior ou inferior da lista. A complexidade do algoritmo é O(log n).
 
 **Requisitos**: A lista deve estar ordenada porque o algoritmo depende da comparação do valor central para decidir se a busca deve continuar à esquerda ou à direita. Se a lista não for ordenada, o algoritmo falhará.
 
 **Exemplo**: Se você estiver procurando o número 7 em uma lista ordenada `[1, 3, 5, 7, 9]`, o algoritmo começará verificando o número no meio da lista (5), depois ajusta a busca para a metade superior (onde 7 está localizado).
 
-## 2. Interpolation Search
-**Descrição**: O **Interpolation Search** é uma melhoria do Binary Search, mas só funciona de maneira eficiente quando a lista está ordenada e os elementos são distribuídos de maneira relativamente uniforme. Em vez de dividir a lista ao meio, ele usa a fórmula de interpolação para estimar a posição do elemento alvo. A complexidade do algoritmo pode ser O(log log n) em casos ideais, mas no pior caso, pode ser O(n).
+## 2. Busca por Interpolação (Interpolation Search)
+**Descrição**: A **Busca por Interpolação** é uma melhoria da Busca Binária, mas só funciona de maneira eficiente quando a lista está ordenada e os elementos são distribuídos de maneira relativamente uniforme. Em vez de dividir a lista ao meio, ela usa a fórmula de interpolação para estimar a posição do elemento alvo. A complexidade do algoritmo pode ser O(log log n) em casos ideais, mas no pior caso, pode ser O(n).
 
-**Vantagens**: Em listas com distribuição uniforme, o Interpolation Search pode ser mais rápido que o Binary Search. Caso contrário, se os elementos não estiverem uniformemente distribuídos, o desempenho do Interpolation Search pode ser pior.
+**Vantagens**: Em listas com distribuição uniforme, a Busca por Interpolação pode ser mais rápida que a Busca Binária. Caso contrário, se os elementos não estiverem uniformemente distribuídos, o desempenho da Busca por Interpolação pode ser pior.
 
 **Exemplo**: Para uma lista de inteiros entre 1 e 100 e uma busca pelo número 47, o algoritmo tenta estimar a posição do 47 com base no valor mínimo e máximo da lista, em vez de ir diretamente ao meio.
 
-## 3. Jump Search
-**Descrição**: O **Jump Search** divide a lista em blocos de tamanho fixo e, a partir da primeira posição, realiza uma busca linear para encontrar o bloco que contém o valor desejado. Em seguida, realiza uma busca linear dentro do bloco. O tempo de execução é O(√n), onde n é o número de elementos na lista.
+## 3. Busca por Saltos (Jump Search)
+**Descrição**: A **Busca por Saltos** divide a lista em blocos de tamanho fixo e, a partir da primeira posição, realiza uma busca linear para encontrar o bloco que contém o valor desejado. Em seguida, realiza uma busca linear dentro do bloco. O tempo de execução é O(√n), onde n é o número de elementos na lista.
 
-**Escolha do "salto"**: O tamanho ideal do salto é √n, onde n é o tamanho da lista. Isso garante que o número de saltos seja mínimo, e a busca linear dentro do bloco seja eficiente.
+**Escolha do "salto"**: O tamanho ideal do salto é √n, onde n é o tamanho da lista. Isso garante que o número de saltos seja mínimo e a busca linear dentro do bloco seja eficiente.
 
 **Exemplo**: Se a lista tiver 100 elementos e o "salto" for 10, o algoritmo vai verificar o elemento nas posições 0, 10, 20, e assim por diante, até encontrar o bloco correto.
 
-## 4. Exponential Search
-**Descrição**: O **Exponential Search** começa verificando a posição 1, depois 2, 4, 8, 16, etc., dobrando o índice a cada passo até ultrapassar o valor procurado ou chegar ao final da lista. Após isso, o algoritmo realiza uma busca binária entre o último índice válido e o anterior. A complexidade é O(log n).
+## 4. Busca Exponencial (Exponential Search)
+**Descrição**: A **Busca Exponencial** começa verificando a posição 1, depois 2, 4, 8, 16, etc., dobrando o índice a cada passo até ultrapassar o valor procurado ou chegar ao final da lista. Após isso, o algoritmo realiza uma busca binária entre o último índice válido e o anterior. A complexidade é O(log n).
 
-**Combinação com Jump e Binary Search**: O Exponential Search combina a "expansão" de índices (como no Jump Search) com a busca binária para localizar a posição exata do elemento.
+**Combinação com Busca por Saltos e Busca Binária**: A Busca Exponencial combina a "expansão" de índices (como no Jump Search) com a busca binária para localizar a posição exata do elemento.
 
-**Exemplo**: Se você estiver procurando o número 67 em uma lista crescente, o algoritmo começa verificando os índices 1, 2, 4, 8, até encontrar um índice maior que 67, e depois aplica o Binary Search entre os índices onde o número poderia estar.
+**Exemplo**: Se você estiver procurando o número 67 em uma lista crescente, o algoritmo começa verificando os índices 1, 2, 4, 8, até encontrar um índice maior que 67, e depois aplica a Busca Binária entre os índices onde o número poderia estar.
 
 ## 5. Shell Sort
-**Descrição**: O **Shell Sort** é uma generalização do Insertion Sort. Ele ordena a lista por "intervalos" que diminuem progressivamente até que a lista seja ordenada. A eficiência do algoritmo depende da sequência de intervalos utilizada. As versões mais comuns das sequências de intervalo são: Shell, Knuth, e Hibbard.
+**Descrição**: O **Shell Sort** é uma generalização do Insertion Sort. Ele ordena a lista por "intervalos" que diminuem progressivamente até que a lista esteja ordenada. A eficiência do algoritmo depende da sequência de intervalos utilizada. As versões mais comuns das sequências de intervalo são: Shell, Knuth e Hibbard.
 
 **Escolha da sequência de intervalo**: A sequência de intervalo afeta a eficiência do algoritmo. Sequências mais eficientes reduzem a quantidade de comparações necessárias. O algoritmo é mais eficiente que o Insertion Sort para listas grandes.
 
@@ -67,5 +67,11 @@
 
 **Exemplo**: Em uma lista ordenada, ao invés de comparar com o elemento do meio, o Ternary Search divide a lista em três partes e faz duas comparações em cada iteração.
 
-## 12. Comparação dos algoritimos de busca
-![algoritimos de busca](assets/comparcao_alg_busca.png)
+## 12. Comparação dos Algoritmos de Busca
+![algoritmos de busca](assets/comparcao_alg_busca.png)
+
+## 13. Comparação dos Algoritmos de Ordenação
+![algoritmos de ordenação](assets/comparacao_alg_ordenacao.png)
+
+## 14. Busca Binária vs Busca por Interpolação
+![binario_vs_interpolação](assets/busca_binaria_vs_busca_interpolacao.png)
