@@ -1,18 +1,8 @@
-import time
 import random
 import matplotlib.pyplot as plt
-from busca_interpolacao import busca_por_interpolacao
-from busca_binaria import busca_binaria
-
-
-def medir_tempo(funcao, lista, valor, iteracoes=1000):
-    inicio = time.perf_counter()
-    for _ in range(iteracoes):
-        resultado = funcao(lista, valor)
-        assert resultado is not None, f"Erro: {valor} não encontrado!"
-    fim = time.perf_counter()
-    tempo_medio = (fim - inicio) / iteracoes
-    return resultado, tempo_medio
+from algoritimos_busca.busca_interpolacao import busca_por_interpolacao
+from algoritimos_busca.busca_binaria import busca_binaria
+from tempo.time import medir_tempo
 
 
 lista_uniforme = list(range(1, 10_001, 2))

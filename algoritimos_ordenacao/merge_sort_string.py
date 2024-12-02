@@ -1,5 +1,4 @@
 def ordenar_por_mercado_strings(lista):
-
     if len(lista) <= 1:
         return lista
 

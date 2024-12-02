@@ -1,6 +1,7 @@
 import random
 import sys
-import time
+from tempo.time import medir_tempo
+
 sys.setrecursionlimit(2000)
 
 def quick_sort(lista, escolha_pivo='primeiro'):
@@ -21,12 +22,6 @@ def quick_sort(lista, escolha_pivo='primeiro'):
 
     return quick_sort(esquerda, escolha_pivo) + [pivo] + quick_sort(direita, escolha_pivo)
 
-def medir_tempo(funcao, lista, escolha_pivo, iteracoes=10):
-    inicio = time.perf_counter()
-    for _ in range(iteracoes):
-        resultado = funcao(lista.copy(), escolha_pivo)
-    fim = time.perf_counter()
-    return (fim - inicio) / iteracoes
 
 def comparar_quick_sort():
     lista_quase_ordenada = [i for i in range(1, 1001)]
@@ -36,12 +31,13 @@ def comparar_quick_sort():
 
     print("Tempo para lista quase ordenada:")
     for escolha_pivo in ['primeiro', 'ultimo', 'meio', 'aleatorio']:
-        tempo_gasto = medir_tempo(quick_sort, lista_quase_ordenada, escolha_pivo)
+        _, tempo_gasto = medir_tempo(quick_sort, lista_quase_ordenada, escolha_pivo)
         print(f"  Pivô {escolha_pivo}: {tempo_gasto:.6f} segundos")
 
     print("\nTempo para lista completamente desordenada:")
     for escolha_pivo in ['primeiro', 'ultimo', 'meio', 'aleatorio']:
-        tempo_gasto = medir_tempo(quick_sort, lista_aleatoria, escolha_pivo)
+        _, tempo_gasto = medir_tempo(quick_sort, lista_aleatoria, escolha_pivo)
         print(f"  Pivô {escolha_pivo}: {tempo_gasto:.6f} segundos")
+
 
 comparar_quick_sort()

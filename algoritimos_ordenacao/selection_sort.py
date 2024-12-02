@@ -1,43 +1,35 @@
-import time
+
 import random
+from tempo.time import medir_tempo_selection
 
-def selection_sort(arr):
-    n = len(arr)
-
+def ordenacao_selecao(lista):
+    n = len(lista)
     for i in range(n):
-        min_index = i
+        indice_minimo = i
         for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
 
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+            if lista[j] < lista[indice_minimo]:
+                indice_minimo = j
 
+        lista[i], lista[indice_minimo] = lista[indice_minimo], lista[i]
 
-        if len(arr) <= 10:
-            print(f"Iteração {i + 1}: {arr}")
+        if len(lista) <= 10:
+            print(f"Iteração {i + 1}: {lista}")
 
-    return arr
-
-def measure_time(func, arr, iterations=10):
-    start = time.perf_counter()
-    for _ in range(iterations):
-        result = func(arr)
-    end = time.perf_counter()
-    avg_time = (end - start) / iterations
-    return avg_time
+    return lista
 
 
-arr_small = [64, 25, 12, 22, 11]
-print("Lista original (pequena):", arr_small)
-sorted_arr_small = selection_sort(arr_small)
-print("\nLista ordenada (pequena):", sorted_arr_small)
+
+lista_pequena = [64, 25, 12, 22, 11]
+print("Lista original (pequena):", lista_pequena)
+lista_ordenada_pequena = ordenacao_selecao(lista_pequena)
+print("\nLista ordenada (pequena):", lista_ordenada_pequena)
+
+lista_media = random.sample(range(1, 1001), 100)
+tempo_execucao_media = medir_tempo_selection(ordenacao_selecao, lista_media, iteracoes=1)
+print(f"\nTempo de execução para lista média: {tempo_execucao_media:.6f} segundos")
 
 
-arr_medium = random.sample(range(1, 1001), 100)  # Lista média de tamanho 100
-time_taken_medium = measure_time(selection_sort, arr_medium, iterations=1)
-print(f"\nTempo de execução para lista média: {time_taken_medium:.6f} segundos")
-
-
-arr_large = random.sample(range(1, 10001), 1000)  # Lista grande de tamanho 1000
-time_taken_large = measure_time(selection_sort, arr_large, iterations=1)
-print(f"\nTempo de execução para lista grande: {time_taken_large:.6f} segundos")
+lista_grande = random.sample(range(1, 10001), 1000)
+tempo_execucao_grande = medir_tempo_selection(ordenacao_selecao, lista_grande, iteracoes=1)
+print(f"\nTempo de execução para lista grande: {tempo_execucao_grande:.6f} segundos")
