@@ -1,28 +1,6 @@
 import time
-
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + middle + quick_sort(right)
-
-
-def binary_search(arr, x):
-    low = 0
-    high = len(arr) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] == x:
-            return mid
-        elif arr[mid] < x:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return -1
-
+from busca_binaria import busca_binaria
+from quick_sort import quick_sort
 
 def main():
     print("Escolha um algoritmo de ordenação ou busca:")
@@ -48,7 +26,7 @@ def main():
         arr.sort()
         start_time = time.time()
 
-        result = binary_search(arr, x)
+        result = busca_binaria(arr, x)
 
         end_time = time.time()
 
