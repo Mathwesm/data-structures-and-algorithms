@@ -1,4 +1,3 @@
-
 import random
 import matplotlib.pyplot as plt
 from algoritimos_ordenacao import*
