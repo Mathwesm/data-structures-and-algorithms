@@ -27,9 +27,9 @@ def medir_tempo_selection(funcao, lista, valor=None, iteracoes=1):
     inicio = time.perf_counter()
     for _ in range(iteracoes):
         if valor is not None:
-            funcao(lista, valor)  # Funções de busca.
+            funcao(lista, valor)
         else:
-            funcao(lista)  # Funções de ordenação.
+            funcao(lista)
     fim = time.perf_counter()
     tempo_medio = (fim - inicio) / iteracoes
     return tempo_medio
