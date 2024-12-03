@@ -198,4 +198,17 @@ A Busca por Interpolação utiliza uma estimativa baseada na distribuição dos 
 
 **Desvantagens:**  
 - Menos eficiente em listas não uniformes.  
-- Complexa de implementar em relação à Busca Binária.  
+- Complexa de implementar em relação à Busca Binária.
+
+---
+
+## 14. Busca Binária vs Busca Jump
+![binario_vs_Jump](assets/comparacao_jump_binaria.png)
+
+ **Busca Jump** (Linha Azul):
+   - Apresenta crescimento linear no tempo de execução conforme o tamanho da lista aumenta.
+   - É eficiente em listas menores, mas perde desempenho em listas grandes devido à necessidade de verificações lineares após os saltos.
+
+2. **Busca Binária** (Linha Vermelha):
+   - Mantém um tempo de execução consistentemente baixo, mesmo com o aumento do tamanho da lista.
+   - Sua eficiência logarítmica \(O(\log n)\) a torna ideal para grandes volumes de dados.
