@@ -26,12 +26,12 @@ def busca_ternaria(lista, x):
 def comparar_algoritmos_busca():
     lista = [i for i in range(1, 10001)]
     x = 9876
+    if __name__ == '__main__':
+        _, tempo_ternario = medir_tempo(busca_ternaria, lista, x, iteracoes=100)
+        print(f"Tempo médio de Busca Ternária: {tempo_ternario:.6f} segundos")
 
-    _, tempo_ternario = medir_tempo(busca_ternaria, lista, x, iteracoes=100)
-    print(f"Tempo médio de Busca Ternária: {tempo_ternario:.6f} segundos")
-
-    _, tempo_binaria = medir_tempo(busca_binaria, lista, x, iteracoes=100)
-    print(f"Tempo médio de Busca Binária: {tempo_binaria:.6f} segundos")
+        _, tempo_binaria = medir_tempo(busca_binaria, lista, x, iteracoes=100)
+        print(f"Tempo médio de Busca Binária: {tempo_binaria:.6f} segundos")
 
 
 comparar_algoritmos_busca()
