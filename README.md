@@ -73,5 +73,45 @@
 ## 13. Comparação dos Algoritmos de Ordenação
 ![algoritmos de ordenação](assets/comparacao_alg_ordenacao.png)
 
+
+### Estabilidade dos Algoritmos de Ordenação  
+1. **Selection Sort (Instável)**  
+   **Por quê?** Durante as trocas, o algoritmo pode colocar elementos iguais fora de ordem.  
+   **Exemplo:**  
+   - Lista original: `[4a, 4b, 3]`  
+   - Após ordenação: `[3, 4b, 4a]`  
+   Elementos `4a` e `4b` trocaram de ordem.  
+
+2. **Shell Sort (Geralmente instável)**  
+   **Por quê?** Depende da sequência de incrementos usada, mas em muitos casos as trocas de elementos iguais não mantêm a ordem original.  
+   **Exemplo:**  
+   - Lista original: `[5a, 3, 5b, 2]`  
+   - Após ordenação: `[2, 3, 5b, 5a]`  
+
+3. **Merge Sort (Estável)**  
+   **Por quê?** Divide e conquista sem modificar a ordem relativa de elementos iguais.  
+   **Exemplo:**  
+   - Lista original: `[2a, 1, 2b]`  
+   - Após ordenação: `[1, 2a, 2b]`  
+
+4. **Quick Sort (Instável)**  
+   **Por quê?** Depende de como o pivô é escolhido e como os elementos são particionados, podendo trocar a ordem de elementos iguais.  
+   **Exemplo:**  
+   - Lista original: `[6a, 3, 6b]`  
+   - Após ordenação: `[3, 6b, 6a]`  
+
+5. **Bucket Sort (Pode ser estável)**  
+   **Por quê?** Depende da implementação. Se os baldes preservarem a ordem dos elementos, será estável.  
+   **Exemplo Estável:**  
+   - Lista original: `[1a, 3, 1b]`  
+   - Após ordenação: `[1a, 1b, 3]`  
+   **Exemplo Instável:** O contrário pode ocorrer se os baldes forem reorganizados de forma arbitrária.  
+
+6. **Radix Sort (Estável)**  
+   **Por quê?** Processa dígitos individuais dos números de forma estável, mantendo a ordem relativa.  
+   **Exemplo:**  
+   - Lista original: `[21a, 13, 21b]`  
+   - Após ordenação: `[13, 21a, 21b]`  
+
 ## 14. Busca Binária vs Busca por Interpolação
 ![binario_vs_interpolação](assets/busca_binaria_vs_busca_interpolacao.png)
