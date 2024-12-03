@@ -153,3 +153,49 @@
 
 ## 14. Busca Binária vs Busca por Interpolação
 ![binario_vs_interpolação](assets/busca_binaria_vs_busca_interpolacao.png)
+
+### Busca Binária
+**Descrição:**  
+A Busca Binária é eficiente para listas ordenadas, dividindo-as ao meio em cada iteração. O algoritmo reduz o intervalo de busca de forma logarítmica, tornando-se ideal para listas de qualquer distribuição.  
+
+**Complexidade:**  
+- Melhor caso: O(1)  
+- Caso médio e pior caso: O(log n)  
+
+**Exemplo:**  
+- **Lista original:** `[10, 20, 30, 40, 50]`  
+- **Busca por 30:**  
+  1. Verifica o elemento no meio (30).  
+  2. Valor encontrado na primeira tentativa.
+
+**Vantagens:**  
+- Funciona com qualquer lista ordenada.  
+- Simples de implementar.  
+
+**Desvantagens:**  
+- Não aproveita a distribuição dos valores na lista.  
+
+---
+
+### Busca por Interpolação
+**Descrição:**  
+A Busca por Interpolação utiliza uma estimativa baseada na distribuição dos valores na lista, tornando-a mais eficiente quando os dados são uniformemente espaçados.  
+
+**Complexidade:**  
+- Melhor caso: O(1)  
+- Caso médio: O(log log n) (quando os valores estão uniformemente distribuídos)  
+- Pior caso: O(n) (para listas desordenadas ou mal distribuídas)  
+
+**Exemplo:**  
+- **Lista original:** `[10, 20, 30, 40, 50]`  
+- **Busca por 40:**  
+  1. Calcula a posição estimada do valor usando a fórmula de interpolação.  
+  2. Encontra diretamente a posição próxima ao valor, reduzindo o número de verificações.
+
+**Vantagens:**  
+- Mais rápida que a Busca Binária em listas uniformemente distribuídas.  
+- Reduz o número de comparações.  
+
+**Desvantagens:**  
+- Menos eficiente em listas não uniformes.  
+- Complexa de implementar em relação à Busca Binária.  
