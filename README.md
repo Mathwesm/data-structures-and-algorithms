@@ -70,6 +70,44 @@
 ## 12. Comparação dos Algoritmos de Busca
 ![algoritmos de busca](assets/comparcao_alg_busca.png)
 
+### 1. Busca Binária (Eficiente)
+**Por quê?** Divide a lista ordenada em partes iguais a cada iteração, garantindo tempo logarítmico em média.  
+**Exemplo:**  
+- **Lista original:** `[10, 20, 30, 40, 50]`  
+- **Busca por 30:** Verifica 30 na segunda divisão da lista e encontra o valor rapidamente.
+
+---
+
+### 2. Busca por Interpolação (Mais eficiente em listas uniformes)
+**Por quê?** Calcula posições de busca com base nos valores dos elementos e sua distribuição. Ideal para listas com elementos bem espaçados.  
+**Exemplo:**  
+- **Lista original:** `[10, 20, 30, 40, 50]`  
+- **Busca por 40:** A interpolação estima diretamente a posição próxima, reduzindo o número de verificações.
+
+---
+
+### 3. Busca Jump (Desempenho ruim)
+**Por quê?** Divide a lista em blocos e busca elementos em saltos, mas não é eficiente para listas grandes.  
+**Exemplo:**  
+- **Lista original:** `[5, 15, 25, 35, 45]`  
+- **Busca por 35:** O algoritmo faz saltos grandes inicialmente e depois realiza buscas lineares dentro de um bloco, tornando-o mais lento.
+
+---
+
+### 4. Busca Exponencial (Intermediário)
+**Por quê?** É eficiente em casos onde o elemento pode estar próximo ao início, mas perde desempenho em listas maiores.  
+**Exemplo:**  
+- **Lista original:** `[1, 2, 3, ..., 1000]`  
+- **Busca por 900:** Expande exponencialmente o intervalo até ultrapassar o valor e realiza busca binária no intervalo identificado.
+
+---
+
+### 5. Busca Ternária (Simples, mas ligeiramente inferior à Binária)
+**Por quê?** Divide a lista em três partes ao invés de duas, aumentando o número de comparações para determinar o segmento correto.  
+**Exemplo:**  
+- **Lista original:** `[10, 20, 30, 40, 50]`  
+- **Busca por 20:** Compara simultaneamente dois elementos para decidir em qual dos três intervalos continuar a busca.
+
 ## 13. Comparação dos Algoritmos de Ordenação
 ![algoritmos de ordenação](assets/comparacao_alg_ordenacao.png)
 
