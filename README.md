@@ -1,6 +1,7 @@
 # Algoritmos de Busca e Ordenação
 
 ## 1. Busca Binária (Binary Search)
+(Busca_Binária)[algoritimos_busca/busca_binaria.py]
 **Descrição**: A **Busca Binária** é um algoritmo de busca eficiente utilizado em listas ordenadas. O algoritmo divide a lista ao meio a cada iteração, comparando o valor central com o elemento alvo. Dependendo do resultado, a busca continua na metade superior ou inferior da lista. A complexidade do algoritmo é O(log n).
 
 **Requisitos**: A lista deve estar ordenada porque o algoritmo depende da comparação do valor central para decidir se a busca deve continuar à esquerda ou à direita. Se a lista não for ordenada, o algoritmo falhará.
