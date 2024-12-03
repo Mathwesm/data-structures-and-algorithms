@@ -1,8 +1,7 @@
-import time
 import random
 import matplotlib.pyplot as plt
-from busca_binaria import busca_binaria
-from busca_jump import busca_jump
+from algoritimos_busca.busca_binaria import busca_binaria
+from algoritimos_busca.busca_jump import busca_jump
 from tempo.time import medir_tempo
 
 
