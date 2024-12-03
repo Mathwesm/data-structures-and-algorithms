@@ -1,6 +1,5 @@
 import time
 
-
 def medir_tempo(funcao, lista, valor, iteracoes=1000):
     inicio = time.perf_counter()
     for _ in range(iteracoes):
