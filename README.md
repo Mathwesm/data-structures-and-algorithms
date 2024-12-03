@@ -104,6 +104,8 @@
 ## 12. Comparação dos Algoritmos de Busca
 ![algoritmos de busca](assets/comparcao_alg_busca.png)
 
+[Comparacação_alg_busca](comparacao_alg_busca/comparcao_alg_busca.py)
+
 ### 1. Busca Binária (Eficiente)
 **Por quê?** Divide a lista ordenada em partes iguais a cada iteração, garantindo tempo logarítmico em média.  
 **Exemplo:**  
@@ -144,6 +146,8 @@
 
 ## 13. Comparação dos Algoritmos de Ordenação
 ![algoritmos de ordenação](assets/comparacao_alg_ordenacao.png)
+
+[Comparacação_alg_ord](comparacao_alg_ordenacao/comparacao_alg_ordenacao.py)
 
 
 ### Estabilidade dos Algoritmos de Ordenação  
@@ -187,6 +191,8 @@
 
 ## 14. Busca Binária vs Busca por Interpolação
 ![binario_vs_interpolação](assets/busca_binaria_vs_busca_interpolacao.png)
+
+[Binario_vs_interpolação](comparacao_alg_busca/binaria_vs_Interpolacao.py)
 
 ### Busca Binária
 **Descrição:**  
@@ -238,6 +244,8 @@ A Busca por Interpolação utiliza uma estimativa baseada na distribuição dos 
 
 ## 14. Busca Binária vs Busca Jump
 ![binario_vs_Jump](assets/comparacao_jump_binaria.png)
+
+[Jump_vs_Binario](comparacao_alg_busca/jump_vs_binaria.py)
 
  **Busca Jump** (Linha Azul):
    - Apresenta crescimento linear no tempo de execução conforme o tamanho da lista aumenta.
